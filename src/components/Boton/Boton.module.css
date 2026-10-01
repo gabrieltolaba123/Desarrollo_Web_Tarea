@@ -1,0 +1,37 @@
+.boton {
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--primario);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.boton:focus-visible {
+  outline: 3px solid var(--primario);
+  outline-offset: 2px;
+}
+
+.primario {
+  background-color: var(--primario);
+  color: var(--superficie);
+}
+
+.primario:hover {
+  filter: brightness(1.1);
+}
+
+.secundario {
+  background-color: transparent;
+  color: var(--primario);
+}
+
+.secundario:hover {
+  background-color: var(--sombra);
+}
+
+/* Botón de alternancia encendido */
+.activo {
+  background-color: var(--primario);
+  color: var(--superficie);
+}
