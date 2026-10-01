@@ -1,8 +1,77 @@
 .tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+  padding: 1.25rem;
   background-color: var(--superficie);
   color: var(--texto);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--borde);
   border-radius: 0.75rem;
-  padding: 1.25rem;
+  box-shadow: 0 1px 2px var(--sombra);
+  transition: box-shadow 0.2s, border-color 0.2s, opacity 0.2s;
+}
+
+.encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.titulo { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.categoria { margin: 0; color: var(--texto-suave); }
+.cupos { margin: 0; font-weight: 600; }
+
+.etiqueta {
+  flex-shrink: 0;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background-color: var(--primario);
+  color: var(--superficie);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.barra {
+  height: 0.6rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--borde);
+}
+
+.relleno {
   height: 100%;
+  border-radius: inherit;
+  background-color: var(--exito);
+}
+
+.disponible .relleno { background-color: var(--exito); }
+
+.pocos { border-color: var(--alerta); }
+.pocos .relleno { background-color: var(--alerta); }
+
+.completo { opacity: 0.55; }
+.completo .cupos { color: var(--peligro); }
+.completo .relleno { background-color: var(--peligro); }
+
+.detalles {
+  align-self: flex-start;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--primario);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--primario);
+  font-weight: 600;
+  cursor: pointer;
+}
+.detalles:hover { background-color: var(--primario); color: var(--superficie); }
+.detalles:focus-visible { outline: 3px solid var(--primario); outline-offset: 2px; }
+
+.descripcion { margin: 0; color: var(--texto-suave); }
+
+/* Va al final para ganarle a .pocos */
+.expandida {
+  border-color: var(--primario);
+  box-shadow: 0 8px 24px var(--sombra);
 }
